@@ -1,0 +1,7 @@
+{
+  "name": "R-Driver",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

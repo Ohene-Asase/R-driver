@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="center"> Schedule a car</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+     <ion-list>
+      
+  <ion-item>
+    <ion-label>
+     date
+    </ion-label>
+    <ion-datetime  display-format="D, MMMM YYYY">
+      
+    </ion-datetime>
+   </ion-item>
+   
+  <ion-item>
+    <ion-label>
+     Time
+  </ion-label>
+  <ion-datetime display-format="hh mm A"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+<ion-label position="floating">Destination</ion-label>
+<ion-input type="text" [(ngModel)]="place"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label position="floating">Reason</ion-label>
+  <ion-textarea></ion-textarea>
+</ion-item>
+
+  </ion-list>
+ 
+  <div class="center">
+<ion-button  (click)=sentAlert()     color="dark">Schedule car</ion-button>
+</div>
+
+</ion-content>

@@ -1,0 +1,28 @@
+/*menu styling */
+ion-menu{
+   ion-item,
+   ion-list, .list-md,
+   ion-content{
+       --background: var(--nice-color);
+       --ion-background-color: var(--nice-color);
+   }
+   ion-item{
+       color: var(--text-color);
+   }
+ion-icon{
+    color: white;
+}
+}
+
+.logo-section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+    min-height: 100px;
+    .logo-section_wrapper{
+        text-align: center;
+        
+    }
+}
+  

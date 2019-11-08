@@ -1,0 +1,69 @@
+<ion-content>
+  <ion-card>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+          Home
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <img src="../../assets/images/car (1).png">
+    <form [formGroup]="requestForm" (ngSubmit)="requestDriver(requestForm.value)">
+      <ion-card>
+        <ion-card-content>
+          <ion-list>
+  
+            <ion-item>
+              <ion-label position="floating">Destination</ion-label>
+              <ion-input type="text" formControlName="destination"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="floating">Number of People</ion-label>
+              <ion-input text="text" formControlName="numberOfPeople"></ion-input>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label position="floating">Reason</ion-label>
+              <ion-textarea formControlName="reason"></ion-textarea>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label>Schedule Ride?</ion-label>
+              <ion-checkbox color="primary"  (click)="toggle()" ></ion-checkbox>
+            </ion-item>
+  
+            <div *ngIf="show">
+              <ion-item>
+                <ion-label>
+                  Date
+                </ion-label>
+                <ion-datetime formControlName="date" display-format="D, MMMM YYYY"></ion-datetime>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>
+                  Time
+                </ion-label>
+                <ion-datetime formControlName="time" display-format="hh mm A"></ion-datetime>
+              </ion-item>
+            </div>
+  
+            <ion-item>
+              <ion-button type="submit">Request Driver</ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </form>
+    <!-- <ion-list>
+      <ion-button size="small" (click)="toast()">Request Driver</ion-button>
+      <ion-button size="small" (click)="presentModal()">Schedule</ion-button>
+    </ion-list> -->
+
+  </ion-card>
+
+</ion-content>

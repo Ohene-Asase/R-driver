@@ -1,0 +1,66 @@
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center class="myPads1">
+          <img src="../../assets/images/soft.png" style="widows: 180px;">
+          <span>
+            <h4>SIGN UP</h4>
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form [formGroup]="tobeposted" (ngSubmit)="Register(tobeposted.value)">
+    <ion-list>
+      <ion-item>
+
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Role</ion-label>
+        <ion-input type="text" formControlName="role"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Phone number</ion-label>
+        <ion-input type="tel" formControlName="phone_no"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Department</ion-label>
+        <ion-input type="department" formControlName="department"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" minlength="6"></ion-input>
+      </ion-item>
+      <small padding style="color:rgb(124, 124, 11)">Password must be at least 6 characters</small>
+
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <small padding *ngIf="password !== confirmPassword" style="color:red">
+        Passwords do not match
+      </small>
+    </ion-list>
+    <ion-button fill="solid" expand="block" color="primary" type="submit" [disabled]="!tobeposted.valid">Sign Up
+    </ion-button>
+  </form>
+
+  <small padding class="ion-text-center">
+    <h6 class="myFont1">
+      Have an account already??
+      <a routerLink="/home" class="myLink"> Sign in </a>
+    </h6>
+  </small>
+</ion-content>
