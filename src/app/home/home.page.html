@@ -1,22 +1,18 @@
-<ion-content class="back">
-  <div class="over-lay">
+<ion-content>
+  <div>
   <ion-grid>
    
-   <ion-row justify-content-center> 
-     <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <ion-row class="ion-justify-content-center">
+     <ion-col class="align-self-center" size-md="6" size-lg="5" size-xs="12">
         <div text-center class="mypad">
           <img src="../../assets/images/soft.png" style="width:180px; filter:brightness(70%)">
               <span>
-                <h1>R-Driver</h1>
+                <h1  style="color:rgb(0, 140, 255); font-style:italic">R-Driver</h1>
               </span>
  </div>
  
+
  
- <br>
- <br>
- <br>
- <br>
- <br>
 
  <form [formGroup]="signedin" (ngSubmit)="Signin(signedin.value)">
   
@@ -30,11 +26,11 @@
       <ion-label  class="label" position=""><ion-icon color="primary" ios="ios-lock" md="md-lock"></ion-icon></ion-label>
       <ion-input  class="input" type="password" formControlName="password"></ion-input>
 </ion-item>
-
-<ion-button fill="full" expand="block" size="small" class="btn" type="submit">Sign in</ion-button>
+ <br>
+<ion-button fill="full" expand="block" size="small" class="btn" type="submit" >Sign in</ion-button>
 </form>
 <small padding class="ion-text-center">
-		<h6 class="myFont">
+		<h6>
 			Do not have an account?? 
 			<a routerLink="/sign-up" class="myLink"> Sign up </a>
 		</h6>                                                         

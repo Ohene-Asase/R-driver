@@ -5,34 +5,63 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
+        
+        <ion-buttons slot="end" >
+          <ion-button (click)="logoutbtn()">
+            <ion-icon  color="blue"  slot="icon-only" name="log-out"></ion-icon>
+          </ion-button>
+        </ion-buttons>
         <ion-title>
           Home
         </ion-title>
       </ion-toolbar>
     </ion-header>
-    <img src="../../assets/images/car (1).png">
+    <img src="../../assets/images/car16.png">
     <form [formGroup]="requestForm" (ngSubmit)="requestDriver(requestForm.value)">
       <ion-card>
         <ion-card-content>
           <ion-list>
-  
+             
             <ion-item>
-              <ion-label position="floating">Destination</ion-label>
-              <ion-input type="text" formControlName="destination"></ion-input>
+               <ion-label position="floating">Destination</ion-label>
+              <ion-input type="text"  formControlName="destination" ></ion-input>
             </ion-item>
-  
+            <div *ngFor="let error of errorMessages.destination">
+             <ng-container *ngIf="destination.hasError(error.type) && (destination.dirty || destination.touched)">
+               <small class="error-message" style="color:red">{{error.message}}</small>
+           </ng-container> 
+          </div>
+          
+             
             <ion-item>
               <ion-label position="floating">Number of People</ion-label>
               <ion-input text="text" formControlName="numberOfPeople"></ion-input>
             </ion-item>
-  
+            <div *ngFor="let error of errorMessages.reason">
+                <ng-container *ngIf="reason.hasError(error.type1) && (reason.dirty || reason.touched)">
+                  <small class="error-message" style="color:red">{{error.message}}</small>
+              </ng-container> 
+             </div>
+             
+
+           
+            
             <ion-item>
               <ion-label position="floating">Reason</ion-label>
               <ion-textarea formControlName="reason"></ion-textarea>
             </ion-item>
+            <div *ngFor="let error of errorMessages.reason">
+                <ng-container *ngIf="reason.hasError(error.type) && (reason.dirty || reason.touched)">
+                  <small class="error-message" style="color:red">{{error.message}}</small>
+              </ng-container> 
+             </div>
+             
+           
+
+            
   
             <ion-item>
-              <ion-label>Schedule Ride?</ion-label>
+              <ion-label>schedule ride?</ion-label>
               <ion-checkbox color="primary"  (click)="toggle()" ></ion-checkbox>
             </ion-item>
   
@@ -41,19 +70,19 @@
                 <ion-label>
                   Date
                 </ion-label>
-                <ion-datetime formControlName="date" display-format="D, MMMM YYYY"></ion-datetime>
+                <ion-datetime formControlName="date" display-format="D, MMMM YYYY" [min]="minDate" ></ion-datetime>
               </ion-item>
     
               <ion-item>
                 <ion-label>
                   Time
                 </ion-label>
-                <ion-datetime formControlName="time" display-format="hh mm A"></ion-datetime>
+                <ion-datetime formControlName="time" display-format="hh mm A" ></ion-datetime>
               </ion-item>
             </div>
   
             <ion-item>
-              <ion-button type="submit">Request Driver</ion-button>
+              <ion-button  [disabled]="!requestForm.valid"                  type="submit">Request Driver</ion-button>
             </ion-item>
           </ion-list>
         </ion-card-content>
