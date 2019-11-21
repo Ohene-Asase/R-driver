@@ -7,30 +7,30 @@ import { Events } from '@ionic/angular';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
+  navigate: any;
+  ngOnInit(){
+    this.sideMenu()
   }
-  pages = [
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'Trip history',
-      url: '/trip',
-      icon: 'car'
-    },
-    {
-      title: 'Settings',
-      url: '/settings',
-      icon: 'settings'
-    }
-  ];
-  SelectedPath = '';
-  constructor(public events: Events, private router: Router) {
-    this.router.events.subscribe((event: RouterEvent) => {
-      this.SelectedPath = event.url;
-    });
-  }
+  sideMenu()
+  {
+    this.navigate=
+    [
+     {
+       title: 'Home',
+       url: '/main',
+       icon: 'home'
+     },
+     {
+       title: 'Trip history',
+       url: '/trip',
+       icon: 'car'
+     },
+     {
+       title: 'Settings',
+       url: '/settings',
+       icon: 'settings'
+     }
+    ]
+  
+}
 }

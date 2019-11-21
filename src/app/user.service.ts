@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+
+
+
 import {catchError} from 'rxjs/operators';
 import { throwError} from 'rxjs';
+import { HttpHeaders, HttpErrorResponse, HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,10 +18,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(data: any) {
-    return this.http.post(this.baseUrl, JSON.stringify(data), { headers: this.headers })
-    .pipe(
-      catchError(this.handleError)
-    )
+    return this.http.post(this.baseUrl, JSON.stringify(data),({ headers: this.headers }));
     
 
   }
@@ -26,10 +26,6 @@ export class UserService {
     console.log(error);
     return throwError(error);
   }
-
-
-
-
 
 }
 

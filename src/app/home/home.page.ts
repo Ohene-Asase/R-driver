@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HTTP } from '@ionic-native/http/ngx';
+
+
 import { FormBuilder } from '@angular/forms';
 import { TokenService } from '../Services/token.service';
 import { UserService } from '../user.service';
 import { error } from 'util';
 import {ToastController} from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
+  providers: [UserService],
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })

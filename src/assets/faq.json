@@ -1,0 +1,21 @@
+{
+    "faqs": [
+    {
+       "question": "destinations",
+       "answer": "SoftTribe",
+       "answer1": "Edc",
+       "answer2": "GWCL",
+        "answer3":  "Airport"
+        
+    },
+    {
+        "question": "Reason",
+        "answer": "To buy DATA",
+        "answer10": "Sign a deal",
+        "answer11": "Meeting",
+         "answer12": "Take Documents"
+    }
+   
+]
+
+}

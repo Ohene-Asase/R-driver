@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
+import { HTTP } from '@ionic-native/http/ngx';
+
+
 import { HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Response } from '@angular/http';
@@ -26,7 +28,7 @@ export class SignUpPage implements OnInit {
   constructor(
     private router: Router,
     private toasterController: ToastController,
-    private http: HttpClient,
+    private http: HTTP,
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -35,11 +37,12 @@ export class SignUpPage implements OnInit {
   Register(formData: any) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json')
       .set('Accept', 'application/json')
+      .set('*', 'String(key) String(value)')
       .set('responseType', 'text')
       .set('Access-Control-Allow-Origin', '*')
 
-    this.http.post("http://104.211.60.175/requestRide/public/api/register", JSON.stringify(formData), { headers: headers })
-      .subscribe(
+    this.http.post("http://104.211.60.175/requestRide/public/api/register", JSON.stringify(formData), JSON.stringify({ headers: headers }))
+      .then(
         res => {
           // this.router.navigate(['/home']);
           if(res) {console.log(res); this.router.navigate(['/home'])}

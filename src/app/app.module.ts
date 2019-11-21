@@ -12,6 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth/auth.guard';
 
+import { HttpModule } from '@angular/http';
+
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +24,8 @@ import { AuthGuard } from './auth/auth.guard';
     BrowserModule, 
     IonicModule.forRoot(),
      AppRoutingModule,
-     HttpClientModule
+     HttpClientModule,
+     HttpModule
      
     
      
@@ -30,6 +35,7 @@ import { AuthGuard } from './auth/auth.guard';
     [AuthGuard],
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    
     
   ],
   bootstrap: [AppComponent]

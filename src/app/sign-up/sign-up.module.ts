@@ -6,6 +6,8 @@ import { IonicModule } from '@ionic/angular';
 import { SignUpPage } from './sign-up.page';
 import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     HttpClientModule,
+    
+    HttpModule,
     ReactiveFormsModule
 
   
