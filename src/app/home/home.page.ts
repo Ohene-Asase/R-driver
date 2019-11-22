@@ -41,7 +41,7 @@ export class HomePage {
         if (res) {
           // console.log(res.data.token);
           localStorage.setItem('userData', res.data.token)
-          this.router.navigate(['/main']);
+          this.router.navigate(['/menu/main']);
         }
         
       },

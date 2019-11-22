@@ -17,17 +17,17 @@ export class MenuPage implements OnInit {
     [
      {
        title: 'Home',
-       url: '/main',
+       url: '/menu/main',
        icon: 'home'
      },
      {
        title: 'Trip history',
-       url: '/trip',
+       url: '/menu/trip',
        icon: 'car'
      },
      {
        title: 'Settings',
-       url: '/settings',
+       url: '/menu/settings',
        icon: 'settings'
      }
     ]
